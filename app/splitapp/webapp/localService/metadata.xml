@@ -75,8 +75,13 @@
                 <Annotation Term="Capabilities.UpdateRestrictions">
                     <Record Type="Capabilities.UpdateRestrictionsType">
                         <PropertyValue Property="Updatable" Bool="true"/>
-                    </Record>
+                    </Record>                    
                 </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false" />
+                    </Record >
+                </Annotation >
             </Annotations>
             <Annotations Target="PersonService.Persons/ID">
                 <Annotation Term="Core.Computed" Bool="true"/>

@@ -11,7 +11,7 @@ entity Persons @(
         nome               : String(100);
         sobrenome          : String(100);
         idade              : Integer;
-        CPF                : String(20);
-        AnoNascimento      : Integer;
-        Endereco           : String(200);    
+        cpf                : String(20);
+        anoNascimento      : Integer;
+        endereco           : String(200);    
 }

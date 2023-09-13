@@ -1,32 +1,25 @@
 using PersonService as service from '../../srv/person-service';
 
+annotate service.Persons with @(odata.draft.enabled:true);
+annotate service.Persons with @(UI.DeleteHidden: true);
+
 annotate service.Persons with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'nome',
+            Label : 'Nome',
             Value : nome,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'sobrenome',
+            Label : 'Sobrenome',
             Value : sobrenome,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'idade',
+            Label : 'Idade',
             Value : idade,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'CPF',
-            Value : CPF,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'AnoNascimento',
-            Value : AnoNascimento,
-        },
+        },        
     ]
 );
 annotate service.Persons with @(
@@ -35,33 +28,19 @@ annotate service.Persons with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'nome',
-                Value : nome,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'sobrenome',
-                Value : sobrenome,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'idade',
-                Value : idade,
-            },
-            {
-                $Type : 'UI.DataField',
                 Label : 'CPF',
-                Value : CPF,
+                Value : cpf,
+                ![@Common.FieldControl] : #ReadOnly,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'AnoNascimento',
-                Value : AnoNascimento,
+                Label : 'Ano de Nascimento',
+                Value : anoNascimento,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Endereco',
-                Value : Endereco,
+                Label : 'Endereço',
+                Value : endereco,
             },
         ],
     },
@@ -69,8 +48,18 @@ annotate service.Persons with @(
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GeneratedFacet1',
-            Label : 'General Information',
+            Label : 'Detalhes',
             Target : '@UI.FieldGroup#GeneratedGroup1',
         },
     ]
+);
+annotate service.Persons with @(
+    UI.HeaderInfo : {
+        TypeName : 'Detalhe',
+        TypeNamePlural : '',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : nome,
+        },
+    }
 );
