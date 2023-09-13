@@ -1,0 +1,11 @@
+### Returns a list of all maintenance persons
+GET http://localhost:4004/person/Persons HTTP/1.1
+
+### Update a maintenance person
+POST http://localhost:4004/person/Persons/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "AnoNascimento": "1981",
+    "Endereco": "Rua da minha casa"
+}
