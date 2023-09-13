@@ -116,6 +116,7 @@
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
+                            "hideFilterBar": true,
                             "entitySet": "Persons",
                             "variantManagement": "Page",
                             "navigation": {

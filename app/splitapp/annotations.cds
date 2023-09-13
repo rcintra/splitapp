@@ -63,3 +63,9 @@ annotate service.Persons with @(
         },
     }
 );
+annotate service.Persons with @(
+    UI.SelectionFields : []
+);
+annotate service.Persons with {
+    nome @Common.Label : 'nome'
+};
